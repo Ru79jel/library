@@ -23,6 +23,7 @@ USE `Library` ;
 CREATE TABLE IF NOT EXISTS `Library`.`book` (
   `idbook` INT NOT NULL,
   `title` VARCHAR(45) NOT NULL,
+  `author` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idbook`))
 ENGINE = InnoDB;
 
@@ -42,7 +43,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Library`.`Transaction` (
   `idTransaction` INT NOT NULL,
-  `TransactionType` VARCHAR(45) NULL,
+  `TransactionType` ENUM("ausleihen","zurückgeben") NOT NULL,
   `Date` DATE NULL,
   `book_idbook` INT NOT NULL,
   `Customer_idCustomer` INT NOT NULL,
@@ -60,6 +61,10 @@ CREATE TABLE IF NOT EXISTS `Library`.`Transaction` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- ALTER TRANSACTIONTYPE - just for practicing MODIFY Keyword
+-- -----------------------------------------------------
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
