@@ -65,7 +65,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- ALTER TRANSACTIONTYPE - just for practicing MODIFY Keyword
 -- -----------------------------------------------------
-
+ALTER TABLE book MODIFY COLUMN idbook INT auto_increment;
+ALTER TABLE customer MODIFY COLUMN idcustomer INT auto_increment;
+ALTER TABLE transaction MODIFY COLUMN idTransaction INT auto_increment;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
